@@ -53,5 +53,12 @@ func TestTestedBinFactory(t *testing.T) {
 		if !strings.Contains(text, "build vendor: g.gomodule.vendor | go.mod") {
 			t.Errorf("Generated ninja file does not have vendor build rule")
 		}
+
+		if !strings.Contains(text, "build out/bin/test.txt: ") {
+			t.Errorf("Generated ninja file does not have build of the custom module for running tests")
+		}
+		if !strings.Contains(text, "outputPath = out/bin/test.txt") {
+			t.Errorf("Generated test output path is not correct")
+		}
 	}
 }
