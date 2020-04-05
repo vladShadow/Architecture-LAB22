@@ -1,1 +1,1 @@
-Остання успішна збірка https://travis-ci.org/github/vladShadow/Architecture-LAB22
+Остання успішна збірка тут: https://travis-ci.org/github/vladShadow/Architecture-LAB22
