@@ -13,6 +13,6 @@ script:
 - ./my-bood-initial
 - ./out/bin/bood # will show that only tests were executed
 - cat out/bin/test.txt # to show that test.txt was created indeed
-- ./out/bin/bood # to show that neither build nor tests were executed
+- ./out/bin/bood # will show that neither build nor tests were executed
 - cd $GOPATH/src/github.com/vladShadow/Architecture-LAB22/examples # to demonstrate examples as well
 - ../build/out/bin/bood
