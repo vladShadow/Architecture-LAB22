@@ -9,7 +9,7 @@ import (
 	"github.com/roman-mazur/bood"
 )
 
-func TestSimpleBinFactory(t *testing.T) {
+func TestTestedBinFactory(t *testing.T) {
 	ctx := blueprint.NewContext()
 
 	ctx.MockFileSystem(map[string][]byte{
@@ -18,6 +18,7 @@ func TestSimpleBinFactory(t *testing.T) {
 			  name: "test-out",
 			  srcs: ["test-src.go"],
 			  pkg: ".",
+			  testPkg: ".",
 	          vendorFirst: true
 			}
 		`),
