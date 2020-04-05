@@ -2,6 +2,7 @@ package gomodule
 
 import (
 	"bytes"
+	"strings"
 	"testing"
 
 	"github.com/google/blueprint"
@@ -41,6 +42,15 @@ func TestZipArchiveFactory(t *testing.T) {
 	} else {
 		text := buffer.String()
 		t.Logf("Gennerated ninja build file:\n%s", text)
+		if !strings.Contains(text, "out/archives/test-out: g.gomodule.zipArchive") {
+			t.Errorf("Generated ninja file does not have build of archivator module")
+		}
+		if !strings.Contains(text, "inputFiles = test-src.go another-test-src.txt") {
+			t.Errorf("Generated archivator input files are not correct")
+		}
+		if !strings.Contains(text, "outputPath = out/archives/test-out") {
+			t.Errorf("Generated archivator output path is not correct")
+		}
 
 	}
 }
