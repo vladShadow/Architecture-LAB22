@@ -1,0 +1,5 @@
+zip_archive {
+ name: "my-archive",
+ srcs: ["**/*.txt"],
+ srcsExclude: ["example-src2.txt"]
+}
